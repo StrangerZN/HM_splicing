@@ -75,10 +75,10 @@ as_ave_chip_signal <- function(HM_file, total_reads){
       left_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_left), ",")))
       right_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_right), ",")))
     } else {
-      # if in minus strand, reverse the flanking region
-      left_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_left), ",")))
+      # if in c
+      left_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_right), ",")))
       left_region <- rev(left_region)
-      right_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_right), ",")))
+      right_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_left), ",")))
       right_region <- rev(right_region)
     }
     left_signal[[i]] <- as.data.frame(left_region)
@@ -120,9 +120,9 @@ canonical_ave_chip_signal <- function(HM_file, total_reads){
       right_reads <- as.numeric(unlist(strsplit(as.character(HM_file[i, 7]), ",")))
 
     } else {
-      left_reads <- as.numeric(unlist(strsplit(as.character(HM_file[i, 6]), ",")))
+      left_reads <- as.numeric(unlist(strsplit(as.character(HM_file[i, 7]), ",")))
       left_reads <- rev(left_reads)
-      right_reads <- as.numeric(unlist(strsplit(as.character(HM_file[i, 7]), ",")))
+      right_reads <- as.numeric(unlist(strsplit(as.character(HM_file[i, 6]), ",")))
       right_reads <- rev(right_reads)
     }
     left_signal[[i]] <- as.data.frame(left_reads)
