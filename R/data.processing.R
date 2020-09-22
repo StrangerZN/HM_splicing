@@ -75,7 +75,7 @@ as_ave_chip_signal <- function(HM_file, total_reads){
       left_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_left), ",")))
       right_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_right), ",")))
     } else {
-      # if in c
+      # if in minus strand, reverse the flanking region
       left_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_right), ",")))
       left_region <- rev(left_region)
       right_region <- as.numeric(unlist(strsplit(as.character(HM_file[i,]$chip_left), ",")))
